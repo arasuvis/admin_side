@@ -40,11 +40,12 @@
 			<tbody>
 			<?php foreach($messages as $m){ ?>
 				<tr>
-				
+				    <td> <?php echo $m->name; ?> </td>
+                    <td> <?php echo $m->password; ?> </td>
+                    <td> <?php echo $m->address; ?> </td>
+                    <td> <?php echo $m->phone; ?> </td>
+                    <td> <?php echo $m->email; ?> </td>
 					<td> <?php echo date("M-d-Y g:i", strtotime($m->date)); ?> </td>
-					<td> <?php echo $m->name; ?> </td>
-					<td> <?php echo $m->contact; ?> </td>
-					<td> <?php echo $m->message; ?> </td>
 					<td>
 						 <a href='<?php echo "http://localhost/projects/crud/index.php/edit/index/" . $m->id; ?>'><button class='btn-primary'>Edit</button></a>
 						 <a href='<?php echo "http://localhost/projects/crud/index.php/edit/delete/" . $m->id; ?>'><button class='btn-primary'>Delete</button></a>
