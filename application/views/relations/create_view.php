@@ -9,7 +9,7 @@
                <form method="POST" action="insert_relation/">
                   <div class="box-body">                   
 					<div class="form-group">
-                      <label for="exampleInputPassword1">Name</label>
+                      <label for="exampleInputPassword1">Name *</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                     </div>                 
                   </div><!-- /.box-body -->

@@ -10,7 +10,7 @@
 			   <input type="hidden" name="id" value="<?php echo $entry->rel_id; ?>"/>
                   <div class="box-body">
 					<div class="form-group">
-                      <label for="exampleInputPassword1">Name</label>
+                      <label for="exampleInputPassword1">Name *</label>
                       <input type="text" class="form-control" value="<?php echo $entry->name; ?>" name="name" id="name" placeholder="Name">
                     </div>					          
                   </div><!-- /.box-body -->

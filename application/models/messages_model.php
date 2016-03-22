@@ -12,6 +12,35 @@ class Messages_model extends CI_Model {
         parent::__construct();
 		
     }
+
+    function get_login($data)
+    {
+        $username = $data['username'];
+        $password = $data['password'];
+
+        /*$this->db->where('username' , $username);
+        $this->db->where('password' , $password);
+        $query = $this->db->get('login');*/
+        //$query = $this->db->get_where('login', array('username' => $username , 'password' =>$password) );
+        
+        $sql = $this->db->query("SELECT username,password FROM login 
+        WHERE username='$username' AND password='$password'");
+
+        //die($sql);
+
+        $result = $sql->result();
+
+        if(!empty($result))
+        {
+                return '1';
+        }
+        else
+        {
+                return '2';
+        }
+        //die();
+        //return $query->result();
+    }
     
     function get_all_entries()
     {

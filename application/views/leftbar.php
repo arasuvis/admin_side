@@ -20,7 +20,7 @@
         
             <li class="treeview active">
               <a href="#">
-                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-table"></i> <span>Dashboard</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">

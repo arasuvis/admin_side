@@ -43,7 +43,7 @@
 					<td> <?php echo date("M-d-Y g:i", strtotime($m->date)); ?> </td>
 					<td>
 						 <a href='<?php echo base_url("index.php/edit/update_view/" . $m->rel_id); ?>'><button class='btn-primary'>Edit</button></a>
-						 <a href='<?php echo base_url("index.php/edit/delete_relation/" . $m->rel_id); ?>'><button class='btn-primary'>Delete</button></a>
+						 <a href='<?php echo base_url("index.php/edit/delete_relation/" . $m->rel_id); ?>' onClick ="return delConfirm()"><button class='btn-primary'>Delete</button></a>
 				    </td>
 				</tr>
 			<?php } ?>
@@ -69,3 +69,17 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script>
+    function delConfirm()
+    {
+        var r = confirm("Do you want to delete");
+        if(r==true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+</script>

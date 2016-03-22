@@ -14,12 +14,13 @@ class Create extends CI_Controller {
 	}
 
 	public function input(){
-
+		
 		if(
 			$this->input->post('exampleInputEmail1') != "" &&
 			$this->input->post('exampleInputPassword1') != "" &&
 			$this->input->post('name') != ""
 		)
+		
 		{
 			$data['email'] = $this->input->post('exampleInputEmail1');
 			$data['password'] = $this->input->post('exampleInputPassword1');
@@ -29,9 +30,12 @@ class Create extends CI_Controller {
 			$this->messages_model->insert_entry($data);
 
 		//	redirect("/home/index?action=success");
-		}
-		else{
 			
+		}
+		
+		else
+		{
+
 		}
 		redirect("/home/index");
 	}	

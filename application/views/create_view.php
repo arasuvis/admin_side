@@ -1,3 +1,10 @@
+ <style>
+ .error {
+color:red;
+font-size:13px;
+margin-bottom:-15px
+}
+ </style>
  <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- general form elements -->
@@ -9,19 +16,20 @@
                <form method="POST" action="input/">
                   <div class="box-body">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
+                      <label for="exampleInputEmail1">Email address *</label>
                       <input type="email" class="form-control" name="exampleInputEmail1" id="exampleInputEmail1" placeholder="Enter email">
+                     <?php echo form_error('exampleInputEmail1'); ?>
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
+                      <label for="exampleInputPassword1">Password *</label>
                       <input type="password" class="form-control" name="exampleInputPassword1" id="exampleInputPassword1" placeholder="Password">
                     </div>
 					<div class="form-group">
-                      <label for="exampleInputPassword1">Name</label>
+                      <label for="exampleInputPassword1">Name *</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                     </div>
 					<div class="form-group">
-                      <label for="exampleInputPassword1">Phone Number</label>
+                      <label for="exampleInputPassword1">Phone Number *</label>
                       <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Password">
                     </div>
 					<div class="form-group">

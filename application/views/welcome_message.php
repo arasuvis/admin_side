@@ -51,7 +51,7 @@
 					<td> <?php echo date("M-d-Y g:i", strtotime($m->date)); ?> </td>
 					<td>
 						 <a href='<?php echo base_url("index.php/edit/index/" . $m->id); ?>'><button class='btn-primary'>Edit</button></a>
-						 <a href='<?php echo base_url("index.php/edit/delete/" . $m->id); ?>'><button class='btn-primary'>Delete</button></a>
+						 <a href='<?php echo base_url("index.php/edit/delete/" . $m->id); ?>'><button class='btn-primary' onclick = "return delConfirm()">Delete</button></a>
 				    </td>
 				</tr>
 			<?php } ?>
@@ -81,3 +81,17 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+<script>
+function delConfirm()
+{
+    var r=confirm('Do you want to delete');
+    if( r == true )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+</script>

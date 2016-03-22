@@ -29,6 +29,7 @@ class Edit extends CI_Controller {
 			$data['entry'] = $data['entry'][0];
 			$data['xxx'] = 'dasd';
 			$this->load->view('header');
+			$this->load->view('leftbar');
 			$this->load->view('edit_view', $data);
 			$this->load->view('footer');
 		}
@@ -76,6 +77,7 @@ class Edit extends CI_Controller {
 		{
 			$data['entry'] = $data['entry'][0];
 			$this->load->view('header');
+			$this->load->view('leftbar');
 			$this->load->view('relations/edit_view', $data);
 			$this->load->view('footer');
 		}
