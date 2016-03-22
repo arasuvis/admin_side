@@ -13,7 +13,7 @@
             </li>	
            <!-- <li class="active">Data tables</li>-->
         </ol>
-    </section>
+    </section>  
 
     <!-- Main content -->
     <section class="content">
@@ -42,11 +42,7 @@
 			<tbody>
 			<?php foreach($messages as $m){ ?>
 				<tr>
-				    <td> <?php echo $m->name; ?> </td>
-                    <td> <?php echo $m->password; ?> </td>
-                    <td> <?php echo $m->address; ?> </td>
-                    <td> <?php echo $m->phone; ?> </td>
-                    <td> <?php echo $m->email; ?> </td>
+				
 					
 					<td> <?php echo $m->name; ?> </td>
 					<td> <?php echo $m->phone_number; ?> </td>
