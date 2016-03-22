@@ -7,7 +7,8 @@ class Create extends CI_Controller {
 	{
 
 		$data['messages'] = "";
-			$this->load->view('header');
+		$this->load->view('header', $data);
+		$this->load->view('leftbar', $data);
 			$this->load->view('create_view');
 			$this->load->view('footer');
 	}
@@ -15,14 +16,16 @@ class Create extends CI_Controller {
 	public function input(){
 
 		if(
-			$this->input->post('name') != "" &&
-			$this->input->post('message') != "" &&
-			$this->input->post('contact') != ""
+			$this->input->post('exampleInputEmail1') != "" &&
+			$this->input->post('exampleInputPassword1') != "" &&
+			$this->input->post('name') != ""
 		)
 		{
+			$data['email'] = $this->input->post('exampleInputEmail1');
+			$data['password'] = $this->input->post('exampleInputPassword1');
 			$data['name'] = $this->input->post('name');
-			$data['message'] = $this->input->post('message');
-			$data['contact'] = $this->input->post('contact');
+			$data['phone_number'] = $this->input->post('phone_number');
+			$data['address'] = $this->input->post('address');
 			$this->messages_model->insert_entry($data);
 
 		//	redirect("/home/index?action=success");
@@ -32,6 +35,35 @@ class Create extends CI_Controller {
 		}
 		redirect("/home/index");
 	}	
+	
+	public function add_relation()
+	{
+
+		$data['messages'] = "";
+		$this->load->view('header', $data);
+		$this->load->view('leftbar', $data);
+			$this->load->view('relations/create_view');
+			$this->load->view('footer');
+	}
+	
+	public function insert_relation(){
+
+		if(
+			
+			$this->input->post('name') != ""
+		)
+		{
+			
+			$data['name'] = $this->input->post('name');
+			$this->relations_model->insert_entry($data);
+
+		//	redirect("/home/index?action=success");
+		}
+		else{
+			
+		}
+		redirect("/home/relation");
+	}
 
 
 }

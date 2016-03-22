@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Data Tables</title>
+    <title>AdminLTE</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -24,9 +24,9 @@
         <!-- Logo -->
         <a href="../../index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
+          <span class="logo-mini"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
+          <span class="logo-lg"><b>Admin</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -45,14 +45,14 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">                  
-                  <span class="hidden-xs">Alexander Pierce</span>
+                  <span class="hidden-xs">Welcome Admin</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      Alexander Pierce - Web Developer
+                    Administrator
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -60,7 +60,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">	
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                     
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Sign out</a>
@@ -70,7 +70,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+               <!-- <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
               </li>
             </ul>
           </div>

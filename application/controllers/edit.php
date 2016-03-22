@@ -38,16 +38,17 @@ class Edit extends CI_Controller {
 	public function input(){
 
 		if(
-			$this->input->post('name') != "" &&
-			$this->input->post('message') != "" &&
-			$this->input->post('contact') != "" && 
-			$this->input->post('id') != ""
+			$this->input->post('exampleInputEmail1') != "" &&
+			$this->input->post('exampleInputPassword1') != "" &&
+			$this->input->post('name') != ""
 		)
 		{
-			$data['name'] = $this->input->post('name');
-			$data['message'] = $this->input->post('message');
-			$data['contact'] = $this->input->post('contact');
+			$data['email'] = $this->input->post('exampleInputEmail1');
 			$data['id'] = $this->input->post('id');
+			$data['password'] = $this->input->post('exampleInputPassword1');
+			$data['name'] = $this->input->post('name');
+			$data['phone_number'] = $this->input->post('phone_number');
+			$data['address'] = $this->input->post('address');
 			$this->messages_model->update_entry($data);
 			
 		}
@@ -63,6 +64,45 @@ class Edit extends CI_Controller {
 		}
 		redirect("/home/index");
 	}	
+	
+	public function update_view()
+	{
+		
+		$data['entry'] =  $this->relations_model->get_entry($this->uri->segment(3, 0));
+		if(!isset($data['entry'][0]) || $data['entry'][0] == ""){
+			echo "error";
+		}
+		else
+		{
+			$data['entry'] = $data['entry'][0];
+			$this->load->view('header');
+			$this->load->view('relations/edit_view', $data);
+			$this->load->view('footer');
+		}
+	}
+	
+	public function edit_relation(){
+
+		if(
+			$this->input->post('name') != ""
+		)
+		{			
+			$data['id'] = $this->input->post('id');
+			$data['name'] = $this->input->post('name');
+			$this->relations_model->update_entry($data);			
+		}
+		else{
+			
+		}
+		redirect("/home/relation");
+	}
+	
+	public function delete_relation(){
+		if($this->uri->segment(3, 0) != ""){
+			$this->relations_model->delete_entry($this->uri->segment(3, 0));	
+		}
+		redirect("/home/relation");
+	}
 
 
 }

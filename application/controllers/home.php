@@ -27,6 +27,16 @@ class Home extends CI_Controller {
 		$this->load->view('welcome_message', $data);
 		$this->load->view('footer', $data);
 	}
+	
+	public function relation()
+	{
+		$messages = $this->relations_model->get_all_relations();
+		$data['messages'] = $messages;
+		$this->load->view('header', $data);
+		$this->load->view('leftbar', $data);
+		$this->load->view('relations/relations', $data);
+		$this->load->view('footer', $data);
+	}
 
 
 

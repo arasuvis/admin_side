@@ -30,10 +30,12 @@
 						<thead>
                           <tr>
 	
-				<td>Date</td>
+				
 				<td>Name</td>
 				<td>Contact</td>
-				<td>Message</td>
+				<td>Email</td>
+				<td>Address</td>
+				<td>Added Date</td>
 				<td>Action</td>
 			</tr>
 			</thead>
@@ -45,10 +47,15 @@
                     <td> <?php echo $m->address; ?> </td>
                     <td> <?php echo $m->phone; ?> </td>
                     <td> <?php echo $m->email; ?> </td>
+					
+					<td> <?php echo $m->name; ?> </td>
+					<td> <?php echo $m->phone_number; ?> </td>
+					<td> <?php echo $m->email; ?> </td>
+					<td> <?php echo $m->address; ?> </td>
 					<td> <?php echo date("M-d-Y g:i", strtotime($m->date)); ?> </td>
 					<td>
-						 <a href='<?php echo "http://localhost/projects/crud/index.php/edit/index/" . $m->id; ?>'><button class='btn-primary'>Edit</button></a>
-						 <a href='<?php echo "http://localhost/projects/crud/index.php/edit/delete/" . $m->id; ?>'><button class='btn-primary'>Delete</button></a>
+						 <a href='<?php echo base_url("index.php/edit/index/" . $m->id); ?>'><button class='btn-primary'>Edit</button></a>
+						 <a href='<?php echo base_url("index.php/edit/delete/" . $m->id); ?>'><button class='btn-primary'>Delete</button></a>
 				    </td>
 				</tr>
 			<?php } ?>
@@ -56,10 +63,11 @@
                             <tfoot>
                                  <tr>
 	
-				<td>Date</td>
 				<td>Name</td>
 				<td>Contact</td>
-				<td>Message</td>
+				<td>Email</td>
+				<td>Address</td>
+				<td>Added Date</td>
 				<td>Action</td>
 			</tr>
 			

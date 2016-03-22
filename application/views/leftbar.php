@@ -8,7 +8,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview">
+         <!--   <li class="treeview">
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -16,7 +16,7 @@
                 <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                 <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
               </ul>
-            </li>
+            </li>-->	
         
             <li class="treeview active">
               <a href="#">
@@ -25,7 +25,8 @@
               </a>
               <ul class="treeview-menu">
                <!-- <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>-->
-                <li class="active"><a href="data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                <li class="active"><a href="<?php echo base_url('index.php/home/index');  ?>"><i class="fa fa-circle-o"></i>Manage Advocate</a></li>
+				 <li class="active"><a href="<?php echo base_url('index.php/home/relation');  ?>"><i class="fa fa-circle-o"></i>Manage Relations</a></li>
               </ul>
             </li>        
         </section>
