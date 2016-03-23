@@ -1,33 +1,40 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller 
+{
+	public function HOME() // Constructor
+	{
+		parent::__construct(); 
+		$this->load->library('session');
+		session_start();
+	}
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	/**** Start Login ****/
+
 	public function index()
 	{
-
-		$messages = $this->messages_model->get_all_entries();
-		$data['messages'] = $messages;
-		$this->load->view('header', $data);
-		$this->load->view('leftbar', $data);
-		$this->load->view('welcome_message', $data);
-		$this->load->view('footer', $data);
+		if($this->session->userdata('is_logged_in'))
+		{
+			$messages = $this->messages_model->get_all_entries();
+			$data['messages'] = $messages;
+			$this->load->view('header', $data);
+			$this->load->view('leftbar', $data);
+			$this->load->view('welcome_message', $data);
+			$this->load->view('footer', $data);
+		}
+		else
+		{
+			$this->load->view('index_admin');
+		}
 	}
 	
+	public function signin_form()
+	{
+		echo "<pre>";print_r($_POST);die();
+	}
+
+	/**** End Login ****/
+
 	public function relation()
 	{
 		$messages = $this->relations_model->get_all_relations();
@@ -37,10 +44,4 @@ class Home extends CI_Controller {
 		$this->load->view('relations/relations', $data);
 		$this->load->view('footer', $data);
 	}
-
-
-
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

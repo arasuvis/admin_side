@@ -68,9 +68,4 @@ class Create extends CI_Controller {
 		}
 		redirect("/home/relation");
 	}
-
-
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
