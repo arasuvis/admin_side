@@ -13,35 +13,35 @@ class Messages_model extends CI_Model {
 		
     }
 
-    function get_login($data)
+    /*** Check Login Credentials ***/
+
+    function get_admin()
     {
-        $username = $data['username'];
-        $password = $data['password'];
+        $sql = $this->db->query("SELECT email_address FROM admin_registrations");
+        $res = $sql->result();
+        foreach ($res as $value) {
+            $email = $value->email_address;
+        }
+        return $email;
+    }
 
-        /*$this->db->where('username' , $username);
-        $this->db->where('password' , $password);
-        $query = $this->db->get('login');*/
-        //$query = $this->db->get_where('login', array('username' => $username , 'password' =>$password) );
-        
-        $sql = $this->db->query("SELECT username,password FROM login 
-        WHERE username='$username' AND password='$password'");
-
-        //die($sql);
-
+    function check_credentials($email,$password)
+    {
+        $sql = $this->db->query("SELECT email_address,password FROM admin_registrations 
+        WHERE email_address = '$email' AND password = '$password' ");
         $result = $sql->result();
-
         if(!empty($result))
         {
-                return '1';
+            return true;
         }
         else
         {
-                return '2';
+            return false;
         }
-        //die();
-        //return $query->result();
     }
     
+    /*** End Login Check ***/
+
     function get_all_entries()
     {
        
