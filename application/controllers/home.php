@@ -56,7 +56,7 @@ class Home extends CI_Controller
 
 	function logout()
 	{
-		$this->session->sess_destroy();
+		$this->session->unset_userdata('is_logged_in');
 		$this->load->view('index_admin');	
 	}	
 

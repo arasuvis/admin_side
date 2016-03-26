@@ -4,19 +4,19 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>OneClick Admin</title>
-      <link rel="icon" href="<?=base_url()?>/image/fevicon.jpg" type="image/jpg">
+      <link rel="icon" href="<?php echo base_url(); ?>img/oneclick.jpg" type="image/jpg">
       <!-- Tell the browser to be responsive to screen width -->
       <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
       <!-- Bootstrap 3.3.5 -->
-      <link href="<?php echo base_url('css/bootstrap.min.css'); ?>" rel="stylesheet">
+      <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
 
       <!-- Font Awesome -->
       <link rel="stylesheet" href="<?php echo base_url();?>css/font-awesome.min.css">
       <!-- Ionicons -->
       <link rel="stylesheet" href="<?php echo base_url();?>css/ionicons.min.css">
-   	  <link href="<?php echo base_url('css/dataTables.bootstrap.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('css/AdminLTE.min.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('css/_all-skins.min.css'); ?>" rel="stylesheet">
+   	  <link href="<?php echo base_url();?>css/dataTables.bootstrap.css" rel="stylesheet">
+	    <link href="<?php echo base_url();?>css/AdminLTE.min.css" rel="stylesheet">
+	    <link href="<?php echo base_url();?>css/_all-skins.min.css" rel="stylesheet">
     </head>
     
     <body class="hold-transition skin-blue sidebar-mini">
@@ -25,7 +25,7 @@
 
         <header class="main-header">
           <!-- Logo -->
-          <a href="../../index2.html" class="logo">
+          <a href="" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"></span>
           <!-- logo for regular state and mobile devices -->
@@ -45,7 +45,7 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">                  
-                    <span class="hidden-xs">Welcome Admin</span>
+                    <span class="hidden-xs"><?php echo $this->session->userdata['is_logged_in']['email_address']; ?></span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
